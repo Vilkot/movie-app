@@ -1,0 +1,23 @@
+.home__description {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.home__title {
+    margin: 0px auto;
+    font-size: 52px;
+    font-weight: 900;
+}
+
+.home__para {
+    font-size: 36px;
+    margin: 0 auto;
+    font-weight: 500;
+}
+
+.home__title_yellow{
+    color: var(--main-color);
+}

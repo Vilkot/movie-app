@@ -1,0 +1,21 @@
+.suggested {
+    width: 100%;
+    text-align: left;
+}
+
+.suggested__movies {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    border-top: 1px solid var(--main-color);
+}
+
+.suggested__header {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.suggested__header--2nd {
+    margin-top: 20px;
+}

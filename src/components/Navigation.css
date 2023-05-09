@@ -1,0 +1,119 @@
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 20px;
+}
+
+.navbar__left-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.navbar__left-section>.MuiSvgIcon-root {
+    font-size: 2.0625rem;
+    margin: 0 -5px 0 0;
+}
+
+.navbar__logo-name {
+    color: var(--main-color);
+    font-size: 2.1rem;
+    font-weight: 900;
+}
+
+.navbar__right-section {
+    display: flex;
+}
+
+.navbar__search {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 500px;
+    padding-left: 20px;
+}
+
+.navbar__search-input {
+    background-color: #fff;
+    box-shadow: -2px 2px 2px 0 rgba(0, 0, 0, 0.2);
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border: 1px solid #757575;
+    border-right: none;
+    height: 34px;
+    line-height: 40px;
+    outline: none;
+    transition: all 300ms ease;
+    padding: 0 15px;
+    width: 100%;
+    font-size: 16px;
+    padding-left: 25px;
+}
+
+.navbar__search-input:focus {
+    caret-color: var(--main-color);
+}
+
+.navbar__search-input::placeholder {
+    color: #aaaaaa;
+    opacity: 0.6;
+}
+
+.navbar__search-input:focus {
+    border-color: var(--main-color);
+}
+
+.navbar__search-input:hover:focus {
+    border-color: var(--main-color);
+}
+
+.navbar__search-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 64px;
+    height: 34px;
+    cursor: pointer;
+    background-color: var(--main-color);
+    box-shadow: -2px 2px 2px rgba(0, 0, 0, 0.2),
+    0px 0px 2px rgba(0, 0, 0, 0.2);
+    border: none;
+    border-bottom-right-radius: 20px;
+    border-top-right-radius: 20px;
+    transition: all 100ms ease;
+    user-select: none;
+}
+
+.navbar__search-btn:active {
+    background-color: rgb(224, 156, 10);
+}
+
+.navbar__search-btn>.MuiSvgIcon-root {
+    font-size: 30px;
+    color: #fff;
+}
+
+.navbar__search-spinner {
+    color: #fff;
+    font-size: 22px;
+    animation: rotate 700ms infinite linear;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.navbar__profile {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    border-radius: 50%;
+    margin-left: 20px;
+}
