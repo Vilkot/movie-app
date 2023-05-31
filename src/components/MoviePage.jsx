@@ -21,6 +21,7 @@ const MovieDescription = () => {
             <div className="movie__page">
                 {data && <img src={data.Poster} alt="Movie/Series Poster" />}
                 <div className="movie__page-title">{data?.Title}</div>
+                <div className="movie__page-year">{data?.Year}</div>
             </div>
         );
     }
