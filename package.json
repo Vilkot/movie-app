@@ -1,5 +1,6 @@
 {
   "name": "movie-app",
+  "homepage": "https://vilkot.github.io/movie-app/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
