@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, HashRouter } from "react-router-dom";
 import Navigation from "./components/Navigation";
 import Home from "./components/Home";
 import Search from "./components/Search";
@@ -17,7 +17,7 @@ function App() {
   }
 
   return (
-    <Router>
+    <HashRouter>
       <div className="container">
         <ScrollToTop />
         <Navigation onSearch={handleSearch} />
@@ -28,7 +28,7 @@ function App() {
         </Routes>
       </div>
       <Footer />
-    </Router>
+    </HashRouter>
   );
 }
 
