@@ -12,8 +12,7 @@
 }
 
 .movie__poster {
-    width: 100%;
-    max-width: 224px;
+    width: 224px;
     height: 336px;
     cursor: pointer;
     object-fit: cover;

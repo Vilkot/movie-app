@@ -1,7 +1,7 @@
 import React from 'react';
 import Movie from './Movie';
 import './Search.css';
-import undraw from '../undraw_no_data.svg';
+import undraw_no_data from './assets/undraw_no_data.svg';
 
 const Search = ({ searchResult, inputValue }) => {
 
@@ -16,7 +16,7 @@ const Search = ({ searchResult, inputValue }) => {
             </p>
             <div className="search__movies">
                 {!searchResult ? (
-                    <img src={undraw} className="search__movies--noData" alt="" />
+                    <img src={undraw_no_data} className="search__movies--noData" alt="" />
                 ) : (
                     searchResult?.map((movie, index) => (
                         <Movie movie={movie} key={index} />

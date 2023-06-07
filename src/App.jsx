@@ -1,10 +1,10 @@
 import { useState } from "react";
-import { BrowserRouter as Router, Routes, Route, HashRouter } from "react-router-dom";
+import { Routes, Route, HashRouter } from "react-router-dom";
 import Navigation from "./components/Navigation";
 import Home from "./components/Home";
 import Search from "./components/Search";
 import Footer from "./components/Footer";
-import MoviePage from "./components/MoviePage";
+import MovieDescription from "./components/MovieDescription";
 import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
@@ -24,7 +24,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/search" element={<Search searchResult={searchResult} inputValue={inputValue} />} />
-          <Route path="/movie/:imdbId" element={<MoviePage />} />
+          <Route path="/movie/:imdbId" element={<MovieDescription />} />
         </Routes>
       </div>
       <Footer />

@@ -1,0 +1,62 @@
+.movie-descr {
+    display: flex;
+    justify-content: space-between;
+}
+
+.left-section {
+    width: 224px;
+    height: 636px;
+}
+
+.middle-section {
+    width: calc(100% - 224px - 233.6px);
+    height: 636px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.right-section {
+    width: fit-content;
+}
+
+.movie-descr__poster {
+    width: 224px;
+    height: 336px;
+    object-fit: cover;
+}
+
+.movie-descr__title {
+    font-size: 20px;
+    font-weight: 700;
+    margin: 0 0 20px 0;
+}
+
+.movie-descr__prem, .movie-descr__duration, .movie-descr__genre, .movie-descr__cast,
+.movie-descr__director {
+    font-size: 14px;
+    margin-bottom: 12px;
+}
+
+.text_bold {
+    font-weight: 600;
+}
+
+.right-section > .movie {
+    margin: 0 0 8px 0;
+}
+
+/* SKELETONS */
+
+.left-section_skeleton {
+    height: 564px;
+    background-color: lightgrey;
+}
+
+.movie-descr__plot_skeleton {
+    height: 116px;
+    width: 100%;
+    background-color: lightgrey;
+}
