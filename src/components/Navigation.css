@@ -25,6 +25,7 @@
 
 .navbar__right-section {
     display: flex;
+    position: relative;
 }
 
 .navbar__search {
@@ -116,4 +117,15 @@
     cursor: pointer;
     border-radius: 50%;
     margin-left: 20px;
+}
+
+.navbar__menu {
+    position: absolute;
+    top: 40px;
+    right: 0px;
+    background-color: #f1f1f1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }

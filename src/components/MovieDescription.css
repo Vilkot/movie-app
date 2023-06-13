@@ -13,7 +13,6 @@
     height: 636px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     align-items: center;
     padding: 0 20px;
 }
@@ -44,6 +43,12 @@
     font-weight: 600;
 }
 
+.movie-descr__player {
+    width: 436px;
+    height: 262.5px;
+    margin-top: 64px;
+}
+
 .right-section > .movie {
     margin: 0 0 8px 0;
 }
@@ -58,5 +63,9 @@
 .movie-descr__plot_skeleton {
     height: 116px;
     width: 100%;
+    background-color: lightgrey;
+}
+
+.movie-descr__player_skeleton {
     background-color: lightgrey;
 }

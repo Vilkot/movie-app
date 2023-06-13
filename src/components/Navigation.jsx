@@ -11,6 +11,11 @@ const Navigation = ({ onSearch }) => {
     let navigate = useNavigate();
     const [loading, setLoading] = useState();
     const [inputValue, setInputValue] = useState('');
+    const [isClicked, setIsClicked] = useState(false);
+
+    const handleClick = () => {
+        setIsClicked(!isClicked);
+    };
 
     async function handleSubmit(event) {
         setLoading(true);
@@ -81,8 +86,17 @@ const Navigation = ({ onSearch }) => {
                 </form>
 
                 <div className="navbar__profile">
-                    <Avatar style={{ width: 34, height: 34 }} />
+                    <Avatar style={{ width: 34, height: 34 }} onClick={handleClick} />
+
                 </div>
+
+                {
+                    isClicked &&
+                    (<div className="navbar__menu">
+                        <div className="">Log in</div>
+                        <div className="">Selected</div>
+                    </div>)
+                }
             </div>
 
         </div>
