@@ -1,17 +1,40 @@
-import { Search, Theaters } from '@mui/icons-material';
+import { BookmarkBorder, Login, Logout, Search, Theaters } from '@mui/icons-material';
 import { Avatar } from '@mui/material';
 import axios from 'axios';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Navigation.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSpinner } from '@fortawesome/free-solid-svg-icons';
+import { auth, provider } from './firebase';
+import { onAuthStateChanged, signInWithPopup, signOut } from 'firebase/auth';
 
 const Navigation = ({ onSearch }) => {
     let navigate = useNavigate();
     const [loading, setLoading] = useState();
     const [inputValue, setInputValue] = useState('');
     const [isClicked, setIsClicked] = useState(false);
+    const [user, setUser] = useState(null);
+
+    useEffect(() => {
+        const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+            setUser(currentUser);
+        });
+
+        return () => unsubscribe();
+    }, []);
+
+    const signIn = () => {
+        signInWithPopup(auth, provider)
+            .catch(error => alert(error.message));
+    };
+
+    const handleSignOut = () => {
+        signOut(auth)
+            .catch((error) => {
+                alert(error.message)
+            });
+    };
 
     const handleClick = () => {
         setIsClicked(!isClicked);
@@ -85,18 +108,37 @@ const Navigation = ({ onSearch }) => {
                     </button>
                 </form>
 
-                <div className="navbar__profile">
-                    <Avatar style={{ width: 34, height: 34 }} onClick={handleClick} />
-
+                <div className="navbar__profile" onClick={handleClick}>
+                    {user ? (
+                        <img src={user.photoURL} alt="Profile Picture" className="navbar__profile-img" />
+                    ) : (
+                        <Avatar style={{ width: 34, height: 34 }} />
+                    )}
                 </div>
 
+
                 {
-                    isClicked &&
-                    (<div className="navbar__menu">
-                        <div className="">Log in</div>
-                        <div className="">Selected</div>
-                    </div>)
+                    isClicked && (
+                        <div className="navbar__menu">
+                            {!user ? (
+                                <div className="navbar__menu-item" onClick={signIn}>
+                                    Sign in
+                                    <Login />
+                                </div>
+                            ) : (
+                                <div className="navbar__menu-item navbar__menu-item_signout" onClick={handleSignOut}>
+                                    Sign out
+                                    <Logout />
+                                </div>
+                            )}
+                            <div className="navbar__menu-item" onClick={() => navigate('/selected')}>
+                                Selected
+                                <BookmarkBorder />
+                            </div>
+                        </div>
+                    )
                 }
+
             </div>
 
         </div>

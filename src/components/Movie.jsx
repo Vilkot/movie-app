@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import './Movie.css';
+import { Add } from '@mui/icons-material';
 
 const Movie = ({ movie, series }) => {
     const [rating, setRating] = useState("");
@@ -37,6 +38,7 @@ const Movie = ({ movie, series }) => {
                             rating
                         )}
                     </Link>
+                    <Add />
                 </div>
             </div>
         </div>

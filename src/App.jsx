@@ -6,6 +6,7 @@ import Search from "./components/Search";
 import Footer from "./components/Footer";
 import MovieDescription from "./components/MovieDescription";
 import ScrollToTop from "./components/ScrollToTop";
+import Selected from "./components/Selected";
 
 function App() {
   const [searchResult, setSearchResult] = useState();
@@ -24,6 +25,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/search" element={<Search searchResult={searchResult} inputValue={inputValue} />} />
+          <Route path="/selected" element={<Selected />} />
           <Route path="/movie/:imdbId" element={<MovieDescription />} />
         </Routes>
       </div>

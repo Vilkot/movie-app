@@ -1,5 +1,5 @@
-
 .movie {
+    position: relative;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -7,7 +7,7 @@
     margin: 8px 16px;
     border: #F7F7F7 solid 5px;
     text-align: left;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     transition: all 200ms ease;
 }
 
@@ -44,14 +44,14 @@
 
 .movie__type {
     display: flex;
-    font-size: 12px;
+    font-size: 13px;
     color: #b6b6b6;
 }
 
 .movie__info--wrapper {
     display: flex;
-    align-items: flex-end;
-    justify-content: space-between;
+    align-items: center;
+    /* justify-content: space-between; */
 }
 
 .movie__year {
@@ -61,6 +61,21 @@
 .movie__link {
     font-weight: 900;
     color: var(--main-color);
+    text-decoration: none;
+    margin-left: 5px;
+    font-size: 14px;
+}
+
+.movie__items {
+    display: flex;
+    align-self: center;
+    justify-content: center;
+}
+
+.movie__info--wrapper>.MuiSvgIcon-root {
+    margin-left: auto;
+    cursor: pointer;
+    font-size: 19px;
 }
 
 /* SKELETON */
@@ -91,14 +106,8 @@
     background-color: lightgrey;
 }
 
-.movie__year--skeleton {
-    width: 26px;
-    height: 10px;
-    background-color: lightgrey;
-}
-
-.movie__link--skeleton {
-    width: 36px;
-    height: 15px;
+.movie__info--wrapper--skeleton {
+    width: 100%;
+    height: 20px;
     background-color: lightgrey;
 }

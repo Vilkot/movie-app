@@ -79,7 +79,7 @@
     cursor: pointer;
     background-color: var(--main-color);
     box-shadow: -2px 2px 2px rgba(0, 0, 0, 0.2),
-    0px 0px 2px rgba(0, 0, 0, 0.2);
+        0px 0px 2px rgba(0, 0, 0, 0.2);
     border: none;
     border-bottom-right-radius: 20px;
     border-top-right-radius: 20px;
@@ -113,13 +113,24 @@
 }
 
 .navbar__profile {
+    width: 34px;
+    height: 34px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     cursor: pointer;
     border-radius: 50%;
     margin-left: 20px;
+    overflow: hidden;
+    position: relative;
+}
+
+.navbar__profile-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .navbar__menu {
+    width: 116px;
     position: absolute;
     top: 40px;
     right: 0px;
@@ -128,4 +139,26 @@
     border: 1px solid #ccc;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.navbar__menu-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    font-weight: 600;
+    color: #8e8e8e;
+    transition: all 100ms ease;
+}
+
+.navbar__menu-item:hover {
+    color: var(--main-color);
+}
+
+.navbar__menu-item:first-child>.MuiSvgIcon-root {
+    margin-right: 3.2px;
+}
+
+.navbar__menu-item_signout>.MuiSvgIcon-root {
+    rotate: 180deg;
 }
