@@ -35,13 +35,16 @@ const Movie = ({ movie, series }) => {
                 await addDoc(collection(db, "users", user.uid, "Selected"), {
                     imdbID: movie?.imdbID || series?.imdbID
                 });
+
+                setIsSelected(true);
             } catch (e) {
                 alert("Error adding document: ", e);
             }
         } else {
-            alert("You are not signed in")
+            alert("You are not signed in");
         }
     }
+
 
     async function removeFromSelected() {
         const user = auth.currentUser;
@@ -50,6 +53,7 @@ const Movie = ({ movie, series }) => {
         querySnapshot.forEach((doc) => {
             deleteDoc(doc.ref);
         });
+        setIsSelected(false);
     }
 
     function navigateToMoviePage() {
