@@ -7,7 +7,6 @@ const Search = ({ searchResult, inputValue }) => {
 
     return (
         <div className="search">
-
             <p className="search__header">
                 {!inputValue ? "No request"
                     : !searchResult ? `No results for "${inputValue}"`

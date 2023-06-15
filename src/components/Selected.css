@@ -1,15 +1,15 @@
-.search {
+.selected {
     display: flex;
     flex-direction: column;
     justify-content: start;
 }
 
-.search__header {
+.selected__header {
     font-size: 24px;
     margin-bottom: 10px;
 }
 
-.search__movies {
+.selected__movies {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -17,6 +17,6 @@
     border-top: 1px solid var(--main-color);
 }
 
-.search__movies--noData {
+.selected__movies--noData {
     max-width: 364px;
 }
