@@ -44,8 +44,8 @@ const Selected = () => {
                 {selectedMovies.length === 0 ? (
                     <img src={undraw_no_data} className="selected__movies--noData" alt="" />
                 ) : (
-                    selectedMovies.map((movie, index) => (
-                        <Movie movie={movie} key={index} />
+                    selectedMovies.map((movie) => (
+                        <Movie movie={movie} key={movie.imdbID} />
                     ))
                 )}
 

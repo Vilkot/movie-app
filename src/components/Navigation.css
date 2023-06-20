@@ -131,6 +131,7 @@
 
 .navbar__menu {
     width: 116px;
+    z-index: 99;
     position: absolute;
     top: 40px;
     right: 0px;

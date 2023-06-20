@@ -4,7 +4,6 @@ import './Search.css';
 import undraw_no_data from './assets/undraw_no_data.svg';
 
 const Search = ({ searchResult, inputValue }) => {
-
     return (
         <div className="search">
             <p className="search__header">
@@ -17,8 +16,8 @@ const Search = ({ searchResult, inputValue }) => {
                 {!searchResult ? (
                     <img src={undraw_no_data} className="search__movies--noData" alt="" />
                 ) : (
-                    searchResult?.map((movie, index) => (
-                        <Movie movie={movie} key={index} />
+                    searchResult?.map((movie) => (
+                        <Movie movie={movie} key={movie.imdbID} />
                     ))
                 )}
 

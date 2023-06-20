@@ -20,7 +20,9 @@ const Movie = ({ movie, series }) => {
         const user = auth.currentUser;
         if (user) {
             const unsubscribe = onSnapshot(collection(db, "users", user.uid, "Selected"), (snapshot) => {
-                setIsSelected(snapshot.docs.some(doc => doc.data().imdbID === (movie?.imdbID || series?.imdbID)));
+                if (snapshot.docs.some(doc => doc.data().imdbID === (movie?.imdbID || series?.imdbID))) {
+                    setIsSelected(true)
+                };
             });
             return unsubscribe;
         } else {
@@ -35,7 +37,6 @@ const Movie = ({ movie, series }) => {
                 await addDoc(collection(db, "users", user.uid, "Selected"), {
                     imdbID: movie?.imdbID || series?.imdbID
                 });
-
                 setIsSelected(true);
             } catch (e) {
                 alert("Error adding document: ", e);
@@ -51,9 +52,9 @@ const Movie = ({ movie, series }) => {
         const q = query(collection(db, "users", user.uid, "Selected"), where("imdbID", "==", movie?.imdbID || series?.imdbID));
         const querySnapshot = await getDocs(q);
         querySnapshot.forEach((doc) => {
-            deleteDoc(doc.ref);
+            deleteDoc(doc.ref)
+                .then(() => setIsSelected(false))
         });
-        setIsSelected(false);
     }
 
     function navigateToMoviePage() {
