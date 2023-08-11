@@ -24,33 +24,35 @@ const MovieDescription = () => {
         <div className="movie-descr">
             {currMovie ? (
                 <>
-                    <div className="left-section">
-                        <img src={currMovie.Poster} className="movie-descr__poster" alt="Movie/Series Poster" />
-                        <div className="movie-descr__title">{currMovie.Title}</div>
-                        <div className="movie-descr__prem">
-                            <span className="text_bold">Premiere: </span>
-                            {currMovie.Released}
+                    <div className="movie-descr__container">
+                        <div className="left-section">
+                            <img src={currMovie.Poster} className="movie-descr__poster" alt="Movie/Series Poster" />
+                            <div className="movie-descr__title">{currMovie.Title}</div>
+                            <div className="movie-descr__prem">
+                                <span className="text_bold">Premiere: </span>
+                                {currMovie.Released}
+                            </div>
+                            <div className="movie-descr__duration">
+                                <span className="text_bold">Duration: </span>
+                                {currMovie.Runtime}
+                            </div>
+                            <div className="movie-descr__genre">
+                                <span className="text_bold">Genre: </span>
+                                {currMovie.Genre}
+                            </div>
+                            <div className="movie-descr__cast">
+                                <span className="text_bold">Cast: </span>
+                                {currMovie.Actors}
+                            </div>
+                            <div className="movie-descr__director">
+                                <span className="text_bold">Director: </span>
+                                {currMovie.Director}
+                            </div>
                         </div>
-                        <div className="movie-descr__duration">
-                            <span className="text_bold">Duration: </span>
-                            {currMovie.Runtime}
+                        <div className="middle-section">
+                            <div className="movie-descr__plot">{currMovie.Plot}</div>
+                            <img src={udraw_video_files} className="movie-descr__player" alt="Trailer/Player" />
                         </div>
-                        <div className="movie-descr__genre">
-                            <span className="text_bold">Genre: </span>
-                            {currMovie.Genre}
-                        </div>
-                        <div className="movie-descr__cast">
-                            <span className="text_bold">Cast: </span>
-                            {currMovie.Actors}
-                        </div>
-                        <div className="movie-descr__director">
-                            <span className="text_bold">Director: </span>
-                            {currMovie.Director}
-                        </div>
-                    </div>
-                    <div className="middle-section">
-                        <div className="movie-descr__plot">{currMovie.Plot}</div>
-                        <img src={udraw_video_files} className="movie-descr__player" alt="Trailer/Player" />
                     </div>
                     <div className="right-section">
                         <Skeleton />

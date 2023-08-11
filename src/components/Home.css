@@ -7,7 +7,7 @@
 }
 
 .home__title {
-    margin: 0px auto;
+    margin: 0 auto;
     font-size: 52px;
     font-weight: 900;
 }
@@ -20,4 +20,19 @@
 
 .home__title_yellow{
     color: var(--main-color);
+}
+
+@media only screen and (max-width: 608px) {
+    .home__title {
+        font-size: 42px;
+    }
+    
+    .home__para {
+        font-size: 30px;
+        margin-bottom: 30px;
+    }
+
+    .home__description {
+        
+    }
 }

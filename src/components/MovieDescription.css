@@ -3,13 +3,17 @@
     justify-content: space-between;
 }
 
+.movie-descr__container {
+    display: flex;
+    justify-content: start;
+}
+
 .left-section {
     width: 224px;
     height: 636px;
 }
 
 .middle-section {
-    width: calc(100% - 224px - 233.6px);
     height: 636px;
     display: flex;
     flex-direction: column;
@@ -33,7 +37,10 @@
     margin: 0 0 20px 0;
 }
 
-.movie-descr__prem, .movie-descr__duration, .movie-descr__genre, .movie-descr__cast,
+.movie-descr__prem,
+.movie-descr__duration,
+.movie-descr__genre,
+.movie-descr__cast,
 .movie-descr__director {
     font-size: 14px;
     margin-bottom: 12px;
@@ -49,7 +56,7 @@
     margin-top: 64px;
 }
 
-.right-section > .movie {
+.right-section>.movie {
     margin: 0 0 8px 0;
 }
 
@@ -69,3 +76,53 @@
 .movie-descr__player_skeleton {
     background-color: lightgrey;
 }
+
+@media only screen and (max-width: 990px) {
+    .movie-descr {
+        flex-direction: column;
+        align-items: end;
+    }
+
+    
+}
+
+@media only screen and (max-width: 755px) {
+    .movie-descr__player {
+        max-width: 436px;
+        width: 100%;
+        margin-top: 64px;
+    }
+}
+
+@media only screen and (max-width: 635px) {
+    .movie-descr__player {
+        margin-top: 12px;
+    }
+}
+
+@media only screen and (max-width: 576px) {
+    .movie-descr {
+        align-items: center;
+        /* justify-content: center; */
+    }
+    
+    .movie-descr__container {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .movie-descr__player {
+        margin-top: 40px;
+    }
+
+    .left-section {
+        height: fit-content;
+        margin-bottom: 30px;
+    }
+    
+    .middle-section {
+        height: fit-content;
+        margin-bottom: 60px;
+    }
+  }

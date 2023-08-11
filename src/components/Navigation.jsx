@@ -82,64 +82,83 @@ const Navigation = ({ onSearch }) => {
 
     return (
         <div className="navbar">
-            <div className="navbar__left-section" onClick={() => navigate('/')}>
-                <Theaters />
+            <div className="navbar-container">
+                <div className="navbar__left-section" onClick={() => navigate('/')}>
+                    <Theaters />
 
-                <h1 className='navbar__logo-name'>REEL
-                    <span style={{ color: '#000' }}>SPOT</span>
-                </h1>
-            </div>
-
-            <div className='navbar__right-section'>
-                <form onSubmit={handleSubmit} className='navbar__search'>
-                    <input
-                        className='navbar__search-input'
-                        type="text"
-                        placeholder="Search by title"
-                        value={inputValue}
-                        onChange={handleChange}
-                        onKeyDown={(event) => event.key === "Enter" && handleSubmit(event)}
-                    />
-                    <button
-                        className="navbar__search-btn"
-                        type="submit"
-                    >
-                        {loading ? <FontAwesomeIcon className='navbar__search-spinner' icon={faSpinner} /> : <Search />}
-                    </button>
-                </form>
-
-                <div className="navbar__profile" onClick={handleClick}>
-                    {user ? (
-                        <img src={user.photoURL} alt="Profile Picture" className="navbar__profile-img" />
-                    ) : (
-                        <Avatar style={{ width: 34, height: 34 }} />
-                    )}
+                    <h1 className='navbar__logo-name'>REEL
+                        <span style={{ color: '#000' }}>SPOT</span>
+                    </h1>
                 </div>
 
+                <div className='navbar__right-section'>
+                    <form onSubmit={handleSubmit} className='navbar__search navbar__search_v1'>
+                        <input
+                            className='navbar__search-input'
+                            type="text"
+                            placeholder="Search by title"
+                            value={inputValue}
+                            onChange={handleChange}
+                            onKeyDown={(event) => event.key === "Enter" && handleSubmit(event)}
+                        />
+                        <button
+                            className="navbar__search-btn"
+                            type="submit"
+                        >
+                            {loading ? <FontAwesomeIcon className='navbar__search-spinner' icon={faSpinner} /> : <Search />}
+                        </button>
+                    </form>
 
-                {
-                    isClicked && (
-                        <div className="navbar__menu">
-                            {!user ? (
-                                <div className="navbar__menu-item" onClick={signIn}>
-                                    Sign in
-                                    <Login />
+                    <div className="navbar__profile" onClick={handleClick}>
+                        {user ? (
+                            <img src={user.photoURL} alt="Profile Picture" className="navbar__profile-img" />
+                        ) : (
+                            <Avatar style={{ width: 34, height: 34 }} />
+                        )}
+                    </div>
+
+
+                    {
+                        isClicked && (
+                            <div className="navbar__menu">
+                                {!user ? (
+                                    <div className="navbar__menu-item" onClick={signIn}>
+                                        Sign in
+                                        <Login />
+                                    </div>
+                                ) : (
+                                    <div className="navbar__menu-item navbar__menu-item_signout" onClick={handleSignOut}>
+                                        Sign out
+                                        <Logout />
+                                    </div>
+                                )}
+                                <div className="navbar__menu-item" onClick={() => navigate('/selected')}>
+                                    Selected
+                                    <BookmarkBorder />
                                 </div>
-                            ) : (
-                                <div className="navbar__menu-item navbar__menu-item_signout" onClick={handleSignOut}>
-                                    Sign out
-                                    <Logout />
-                                </div>
-                            )}
-                            <div className="navbar__menu-item" onClick={() => navigate('/selected')}>
-                                Selected
-                                <BookmarkBorder />
                             </div>
-                        </div>
-                    )
-                }
+                        )
+                    }
 
+                </div>
             </div>
+
+            <form onSubmit={handleSubmit} className='navbar__search navbar__search_v2'>
+                <input
+                    className='navbar__search-input'
+                    type="text"
+                    placeholder="Search by title"
+                    value={inputValue}
+                    onChange={handleChange}
+                    onKeyDown={(event) => event.key === "Enter" && handleSubmit(event)}
+                />
+                <button
+                    className="navbar__search-btn"
+                    type="submit"
+                >
+                    {loading ? <FontAwesomeIcon className='navbar__search-spinner' icon={faSpinner} /> : <Search />}
+                </button>
+            </form>
 
         </div>
     );
